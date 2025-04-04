@@ -3,7 +3,9 @@
 
 void PH4502C_Sensor::init() {
     pinMode(this->_ph_level_pin, INPUT);
-    pinMode(this->_temp_pin, INPUT);
+    if (this->_temp_pin != PH4502C_TEMPERATURE_DISABLED) {
+      pinMode(this->_temp_pin, INPUT);
+    }
 }
 
 void PH4502C_Sensor::recalibrate(float calibration) {
@@ -35,5 +37,9 @@ float PH4502C_Sensor::read_ph_level_single() {
 }
 
 int PH4502C_Sensor::read_temp() {
+    if (this->_temp_pin == PH4502C_TEMPERATURE_DISABLED) {
+        return 0;
+    }
+
     return analogRead(this->_temp_pin);
 }

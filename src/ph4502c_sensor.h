@@ -35,6 +35,8 @@
 /// Rate of change in voltage per unit change in pH.
 #define PH4502C_PH_VOLTAGE_PER_PH 0.18f
 
+#define PH4502C_TEMPERATURE_DISABLED 0
+
 /**
  * 
  * @class PH4502C_Sensor
@@ -60,7 +62,8 @@ public:
      * @param adc_resolution ADC resolution used for voltage calculation from the analog read (default is PH4502C_DEFAULT_ADC_RESOLUTION).
      * 
      */
-    PH4502C_Sensor(uint16_t ph_level_pin, uint16_t temp_pin,
+    PH4502C_Sensor(uint16_t ph_level_pin, 
+		   uint16_t temp_pin = iPH4502C_TEMPERATURE_DISABLED,
                    float calibration = PH4502C_DEFAULT_CALIBRATION,
                    int reading_interval = PH4502C_DEFAULT_READING_INTERVAL,
                    int reading_count = PH4502C_DEFAULT_READING_COUNT,
