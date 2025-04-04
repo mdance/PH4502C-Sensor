@@ -63,7 +63,7 @@ public:
      * 
      */
     PH4502C_Sensor(uint16_t ph_level_pin, 
-		   uint16_t temp_pin = iPH4502C_TEMPERATURE_DISABLED,
+		   uint16_t temp_pin = PH4502C_TEMPERATURE_DISABLED,
                    float calibration = PH4502C_DEFAULT_CALIBRATION,
                    int reading_interval = PH4502C_DEFAULT_READING_INTERVAL,
                    int reading_count = PH4502C_DEFAULT_READING_COUNT,
