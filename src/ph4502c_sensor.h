@@ -27,13 +27,13 @@
 #define PH4502C_DEFAULT_ADC_RESOLUTION 1024.0f
 
 /// Operating voltage for the PH4502C sensor.
-#define PH4502C_VOLTAGE 5.0f
+#define PH4502C_VOLTAGE 3.3f
 
 /// Voltage that represents a neutral pH reading (pH = 7).
-#define PH4502C_MID_VOLTAGE 2.5f
+#define PH4502C_MID_VOLTAGE 1.65f
 
 /// Rate of change in voltage per unit change in pH.
-#define PH4502C_PH_VOLTAGE_PER_PH 0.18f
+#define PH4502C_PH_VOLTAGE_PER_PH 0.23f
 
 #define PH4502C_TEMPERATURE_DISABLED 0
 
