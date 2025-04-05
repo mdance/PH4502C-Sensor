@@ -23,7 +23,7 @@ float PH4502C_Sensor::read_ph_level() {
     float avg_adc = total / this->_reading_count;
     float voltage = (avg_adc / this->_adc_resolution) * PH4502C_VOLTAGE;
     
-    float ph = this->_calibration + (PH4502C_MID_VOLTAGE - voltage) / PH4502C_PH_VOLTAGE_PER_PH;
+    float ph = _calibration + (voltage - PH4502C_MID_VOLTAGE) / PH4502C_PH_VOLTAGE_PER_PH;
 
     return ph;
 }
@@ -32,7 +32,7 @@ float PH4502C_Sensor::read_ph_level_single() {
     float adc = analogRead(this->_ph_level_pin);
     float voltage = (adc / this->_adc_resolution) * PH4502C_VOLTAGE;
 
-    return this->_calibration + (PH4502C_MID_VOLTAGE - voltage) / PH4502C_PH_VOLTAGE_PER_PH;
+    return _calibration + (voltage - PH4502C_MID_VOLTAGE) / PH4502C_PH_VOLTAGE_PER_PH;
 }
 
 int PH4502C_Sensor::read_temp() {
