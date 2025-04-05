@@ -15,7 +15,7 @@
 #include <Arduino.h>
 
 /// Default calibration value for the PH4502C sensor.
-#define PH4502C_DEFAULT_CALIBRATION 14.8f
+#define PH4502C_DEFAULT_CALIBRATION 7.00f
 
 /// Default reading interval (in milliseconds) between pH readings.
 #define PH4502C_DEFAULT_READING_INTERVAL 100
@@ -30,10 +30,10 @@
 #define PH4502C_VOLTAGE 3.3f
 
 /// Voltage that represents a neutral pH reading (pH = 7).
-#define PH4502C_MID_VOLTAGE 1.65f
+#define PH4502C_MID_VOLTAGE 3.24f
 
 /// Rate of change in voltage per unit change in pH.
-#define PH4502C_PH_VOLTAGE_PER_PH 0.23f
+#define PH4502C_PH_VOLTAGE_PER_PH 0.07722f
 
 #define PH4502C_TEMPERATURE_DISABLED 0
 
